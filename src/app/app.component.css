@@ -1,0 +1,105 @@
+.container{
+    padding: 1em 0em;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 600px;
+    color: var(--primaryColor);
+}
+
+.ubicacion{  
+  margin-top: 1em;
+  text-align: center;
+  color: white;
+}
+
+h1{
+    text-align: center;
+    margin: 1em 0em;
+}
+
+.datos{    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+.dato{
+    padding: 1em 1em;
+    margin: 0.5em;    
+    border-radius: 1em;  
+    box-shadow: 0 0 8px 4px rgba(209, 209, 209, 0.5);  
+}
+
+.dato:hover{
+  box-shadow: 0 0 8px 4px rgba(orange, 0.5);  
+}
+
+.grande{
+    font-size: 3em;
+}
+
+.verde{
+  color: lightgreen;
+}
+
+.naranja{  
+  color: orange;
+}
+
+.rojo{  
+  color: rgb(196, 55, 55);
+}
+
+.bouncingLoader > div, .bouncingLoader:before, .bouncingLoader:after{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: hsl(0, 0%, 100%);
+    margin-bottom: -5px;
+    border-radius: 50%;
+    animation: bouncing-loader 0.6s infinite alternate;
+  }
+  
+  .bouncingLoader > div, .bouncingLoader:before, .bouncingLoader:after {
+    content: "";
+  }
+  
+  .bouncingLoader > div {
+    margin: 0 5px;
+  }
+  
+  .bouncingLoader > div {
+    animation-delay: 0.2s;
+  }
+  
+  .bouncingLoader:after {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes bouncing-loader {
+    to {
+        opacity: 0.1;
+        transform: translate3d(0, -16px, 0);
+    }
+  }
+
+  .btnInfo{
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 1em;
+  }
+
+  .btnInfo a {
+    background-color: orange;
+    padding: 1em;
+    color: black;    
+    border-radius: 0.5em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-right: 16px;    
+  }
+
+  .btnInfo a:hover{
+    box-shadow: 0 0 8px 4px rgba(orange, 0.5);  
+  }

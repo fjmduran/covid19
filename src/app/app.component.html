@@ -1,0 +1,119 @@
+<div class="container">
+  <div class="ubicacion">
+    <mat-accordion>
+      <mat-expansion-panel
+        class="backgroundPrimary mat-elevation-z8"
+        [expanded]="expande"
+        (opened)="setExpande()"
+      >
+        <mat-expansion-panel-header class="backgroundPrimary">
+          <mat-panel-title> Seleccione una localidad </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-accordion multi *ngFor="let provincia of provincias">
+          <mat-expansion-panel class="backgroundPrimary mat-elevation-z8">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ provincia.nombre }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <button
+              mat-raised-button
+              class="backgroundAccent"
+              style="margin: 0.25rem"
+              (click)="cargaDatos(localidad)"
+              *ngFor="let localidad of provincia.localidades"
+            >
+              {{ localidad.nombre }}
+            </button>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <h1>Datos COVID-19 de {{ localidadSeleccionada.nombre }}</h1>
+  <div style="text-align: center" *ngIf="obs$ | async as data; else loading">
+    <div class="datos">
+      <div class="dato">
+        <p>Confirmados PDIA 14 días:</p>
+        <p class="grande">{{ data.data[0][3].format }}</p>
+      </div>
+      <div
+        class="dato"
+        [class.verde]="data.data[0][4].val < 500"
+        [class.naranja]="data.data[0][4].val >= 500 && data.data[0][4].val < 1000"
+        [class.rojo]="data.data[0][4].val >= 1000"
+      >
+        <p>Tasa PDIA 14 días:</p>
+        <p class="grande">{{ data.data[0][4].format }}</p>
+      </div>
+      <div class="dato">
+        <p>Confirmados PDIA 7 días:</p>
+        <p class="grande">{{ data.data[0][5].format }}</p>
+      </div>
+      <div class="dato">
+        <p>Total confirmados:</p>
+        <p class="grande">{{ data.data[0][6].format }}</p>
+      </div>
+      <div class="dato">
+        <p>Habitantes:</p>
+        <p class="grande">{{ data.data[0][1].format }}</p>
+      </div>
+    </div>
+  </div>
+  <p>PDIA: Prueba de Detección de Infección Activa</p>
+  <p>
+    <i
+      >Datos oficiales enviados por la Junta de Andalucía al Ministerio de
+      Sanidad</i
+    >
+  </p>
+  <p><i>Fuente: Junta de Andalucía</i></p>
+</div>
+<hr />
+<div class="btnInfo">    
+  <button
+  mat-raised-button
+  style="background-color: #299b53; color: white; padding: 0.5rem;"
+  type="button"
+  matTooltip="Enviar recibo por WhatsApp"
+  matTooltipClass="toolTip"
+  (click)="openSweetInputPhoneNumber()"
+>
+<mat-icon svgIcon="whatsapp"></mat-icon> Comparte gratis la aplicación
+</button>
+  <hr />
+  <p style="margin-top: 1rem; color:white;">¿Quieres ver otras localidades?¿Tienes alguna sugerencia?</p>
+  <br />
+  <a
+    class="mat-elevation-z8"
+    href="https://fjmduran.com/contacto"
+    target="_blank"
+    rel="noopener"
+    >Contacta sin compromiso</a
+  >
+</div>
+<br>
+
+<div style="position: relative; padding-bottom: 56.25%">
+  <iframe
+    width="800"
+    height="450"
+    src="https://covid-vacuna.app/embed"
+    frameborder="0"
+    scrolling="no"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+  ></iframe>
+</div>
+
+<ng-template #loading>
+  <div style="text-align: center; padding: 10em 0em">
+    <div class="bouncingLoader">
+      <div></div>
+    </div>
+    <br />
+    <p>Obteniendo datos de la Junta de Andalucía</p>
+  </div>
+</ng-template>
