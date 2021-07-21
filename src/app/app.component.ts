@@ -23,7 +23,9 @@ export class AppComponent {
       nombre:'Cádiz',
       localidades:[
         {nombre: 'Bornos', dataValue:2363},
+        {nombre: 'Conil de la Frontera', dataValue:2367},
         {nombre: 'Jerez de la Frontera', dataValue:2373},
+
       ]
     },
     {
