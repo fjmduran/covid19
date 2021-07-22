@@ -34,6 +34,7 @@
   </div>
 
   <h1>Datos COVID-19 de {{ localidadSeleccionada.nombre }}</h1>
+
   <div style="text-align: center" *ngIf="obs$ | async as data; else loading">
     <div class="datos">
       <div class="dato">
@@ -43,7 +44,9 @@
       <div
         class="dato"
         [class.verde]="data.data[0][4].val < 500"
-        [class.naranja]="data.data[0][4].val >= 500 && data.data[0][4].val < 1000"
+        [class.naranja]="
+          data.data[0][4].val >= 500 && data.data[0][4].val < 1000
+        "
         [class.rojo]="data.data[0][4].val >= 1000"
       >
         <p>Tasa PDIA 14 días:</p>
@@ -73,19 +76,21 @@
   <p><i>Fuente: Junta de Andalucía</i></p>
 </div>
 <hr />
-<div class="btnInfo">    
+<div class="btnInfo">
   <button
-  mat-raised-button
-  style="background-color: #299b53; color: white; padding: 0.5rem;"
-  type="button"
-  matTooltip="Enviar recibo por WhatsApp"
-  matTooltipClass="toolTip"
-  (click)="openSweetInputPhoneNumber()"
->
-<mat-icon svgIcon="whatsapp"></mat-icon> Comparte gratis la aplicación
-</button>
+    mat-raised-button
+    style="background-color: #299b53; color: white; padding: 0.5rem"
+    type="button"
+    matTooltip="Enviar recibo por WhatsApp"
+    matTooltipClass="toolTip"
+    (click)="openSweetInputPhoneNumber()"
+  >
+    <mat-icon svgIcon="whatsapp"></mat-icon> Comparte gratis la aplicación
+  </button>
   <hr />
-  <p style="margin-top: 1rem; color:white;">¿Quieres ver otras localidades?¿Tienes alguna sugerencia?</p>
+  <p style="margin-top: 1rem; color: white">
+    ¿Quieres ver otras localidades?¿Tienes alguna sugerencia?
+  </p>
   <br />
   <a
     class="mat-elevation-z8"
@@ -95,7 +100,7 @@
     >Contacta sin compromiso</a
   >
 </div>
-<br>
+<br />
 
 <div style="position: relative; padding-bottom: 56.25%">
   <iframe
