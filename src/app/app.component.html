@@ -76,8 +76,21 @@
   <p><i>Fuente: Junta de Andalucía</i></p>
 </div>
 <hr />
+
 <div class="btnInfo">
+  <a
+    mat-raised-button
+    style="background-color: orange; margin-bottom: 0.5rem"
+    class="mat-elevation-z8"
+    [href]="mapaCovid"
+    target="_blank"
+    rel="noopener"
+    ><mat-icon>sanitizer</mat-icon> Medidas preventivas en
+    {{ localidadSeleccionada.nombre }}</a
+  >
+  <br>
   <button
+    class="mat-elevation-z8"
     mat-raised-button
     style="background-color: #299b53; color: white; padding: 0.5rem"
     type="button"
@@ -93,11 +106,12 @@
   </p>
   <br />
   <a
+    mat-raised-button
     class="mat-elevation-z8"
     href="https://fjmduran.com/contacto"
     target="_blank"
     rel="noopener"
-    >Contacta sin compromiso</a
+    ><mat-icon>email</mat-icon> Contacta sin compromiso</a
   >
 </div>
 <br />
