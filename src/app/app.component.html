@@ -58,13 +58,25 @@
       </div>
       <div class="dato">
         <p>Total confirmados:</p>
-        <p class="grande">{{ data.data[0][6].format }}</p>
+        <p class="grande">{{ data.data[0][2].format }}</p>
       </div>
       <div class="dato">
         <p>Habitantes:</p>
         <p class="grande">{{ data.data[0][1].format }}</p>
       </div>
     </div>
+  </div>
+  <div class="btnInfo">
+    <a
+    mat-raised-button
+    style="background-color: orange; margin-bottom: 0.5rem"
+    class="mat-elevation-z8"
+    [href]="mapaCovid"
+    target="_blank"
+    rel="noopener"
+    ><mat-icon>sanitizer</mat-icon> Medidas preventivas en
+    {{ localidadSeleccionada.nombre }}</a
+  >
   </div>
   <p>PDIA: Prueba de Detección de Infección Activa</p>
   <p>
@@ -78,17 +90,6 @@
 <hr />
 
 <div class="btnInfo">
-  <a
-    mat-raised-button
-    style="background-color: orange; margin-bottom: 0.5rem"
-    class="mat-elevation-z8"
-    [href]="mapaCovid"
-    target="_blank"
-    rel="noopener"
-    ><mat-icon>sanitizer</mat-icon> Medidas preventivas en
-    {{ localidadSeleccionada.nombre }}</a
-  >
-  <br>
   <button
     class="mat-elevation-z8"
     mat-raised-button
