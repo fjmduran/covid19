@@ -58,6 +58,7 @@ export class AppComponent {
           {nombre: 'La Puebla de los Infantes', dataValue:3105, detailMapaCovid:'La%20Puebla%20de%20los%20Infantes'},
           {nombre: 'Lora del Río', dataValue:3082, detailMapaCovid:'Lora%20del%20Río'},
           {nombre: 'Mairena del Alcor', dataValue:3085, detailMapaCovid:'Mairena%20del%20Alcor'},
+          {nombre: 'Montellano', dataValue:3091, detailMapaCovid:'Montellano'},
           {nombre: 'Peñaflor', dataValue:3101, detailMapaCovid:'Peñaflor'},
           {nombre: 'Sevilla (capital)', dataValue:3120, detailMapaCovid:'Sevilla'},
           {nombre: 'Tocina', dataValue:3121, detailMapaCovid:'Tocina'},
