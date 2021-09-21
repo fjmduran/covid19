@@ -42,6 +42,7 @@ export class AppComponent {
         nombre:'Huelva',
         localidades:[
           {nombre: 'Almonte', dataValue:2718, detailMapaCovid:'Almonte'},
+          {nombre: 'Cartaya', dataValue:2734, detailMapaCovid:'Cartaya'},
           {nombre: 'Isla Cristina', dataValue:2755, detailMapaCovid:'Isla%20Cristina'},
           {nombre: 'Punta Umbría', dataValue:2773, detailMapaCovid:'Punta%20Umbría'},
         ]
