@@ -13,10 +13,11 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdSenseComponent } from './ad-sense.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, AdSenseComponent
   ],
   imports: [
     BrowserModule,
