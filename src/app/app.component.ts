@@ -50,6 +50,7 @@ export class AppComponent {
       {
         nombre:'Sevilla',
         localidades:[
+          {nombre: 'Alcolea del río', dataValue:3030, detailMapaCovid:'Alcolea%20del%20Río'},
           {nombre: 'Cazalla de la Sierra', dataValue:3057, detailMapaCovid:'Cazalla%20de%20la%20Sierra'},
           {nombre: 'Constantina', dataValue:3058, detailMapaCovid:'Constantina'},
           {nombre: 'Dos Hermanas', dataValue:3063, detailMapaCovid:'Dos%20Hermanas'},
