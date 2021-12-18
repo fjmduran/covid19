@@ -14,7 +14,9 @@ export class AppComponent {
   
   title = 'Datos CODVID-19';
 
-  public obs$!: Observable<any>;
+  private obs$!: Observable<any>;
+  public data:any;
+  public httpError:boolean=false;
 
   public localidadSeleccionada:Localidad={nombre: 'Peñaflor', dataValue:3101, detailMapaCovid:'Peñaflor'};
 
@@ -94,10 +96,19 @@ export class AppComponent {
   }
 
   public cargaDatos(localidad:Localidad){
+    this.httpError=false;
     this.expande=false;
     this.localidadSeleccionada=localidad;    
     localStorage.setItem('localidad',JSON.stringify(this.localidadSeleccionada));
     this.obs$=this.api.loadCovidData(localidad.dataValue);
+    this.obs$.subscribe(data=>{
+      this.data=data;
+      this.httpError=false;
+    },
+    error=>{
+      this.httpError=true;
+      console.log(error);      
+    })
     this.mapaCovid=`https://www.mapacovid.es/detail/${this.localidadSeleccionada.detailMapaCovid}`;
   }
 
