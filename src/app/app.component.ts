@@ -96,6 +96,7 @@ export class AppComponent {
   }
 
   public cargaDatos(localidad:Localidad){
+    this.data=null;
     this.httpError=false;
     this.expande=false;
     this.localidadSeleccionada=localidad;    
