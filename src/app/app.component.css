@@ -29,15 +29,10 @@ h1 {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 0.8em;
+  padding: 1em;
   margin: 0.5em;
   border-radius: 1em;
-  box-shadow: 0 0 8px 4px rgba(209, 209, 209, 0.5);
-  max-width: 8rem;
-}
-
-.dato:hover {
-  box-shadow: 0 0 8px 4px rgba(orange, 0.5);
+  box-shadow: 0 0 8px 4px rgba(209, 209, 209, 0.5); 
 }
 
 .dato p {
