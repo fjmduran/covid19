@@ -45,6 +45,7 @@ export class AppComponent {
         localidades:[
           {nombre: 'Almonte', dataValue:2718, detailMapaCovid:'Almonte'},
           {nombre: 'Cartaya', dataValue:2734, detailMapaCovid:'Cartaya'},
+          {nombre: 'Higuera de la sierra', dataValue:2751, detailMapaCovid:'Higuera%20de%20la%20sierra'},
           {nombre: 'Isla Cristina', dataValue:2755, detailMapaCovid:'Isla%20Cristina'},
           {nombre: 'Punta Umbría', dataValue:2773, detailMapaCovid:'Punta%20Umbría'},
         ]
@@ -58,6 +59,7 @@ export class AppComponent {
           {nombre: 'Dos Hermanas', dataValue:3063, detailMapaCovid:'Dos%20Hermanas'},
           {nombre: 'Écija', dataValue:503755, detailMapaCovid:'Écija'},
           {nombre: 'El Pedroso', dataValue:3100, detailMapaCovid:'El%20Pedroso'},
+          {nombre: 'Guillena', dataValue:3074, detailMapaCovid:'Guillena'},
           {nombre: 'La Campana', dataValue:3047, detailMapaCovid:'La%20Campana'},
           {nombre: 'La Puebla de los Infantes', dataValue:3105, detailMapaCovid:'La%20Puebla%20de%20los%20Infantes'},
           {nombre: 'Lora del Río', dataValue:3082, detailMapaCovid:'Lora%20del%20Río'},
