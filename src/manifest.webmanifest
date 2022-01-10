@@ -1,6 +1,7 @@
 {
-  "name": "COVID-19 en tu municipio",
   "short_name": "COVID-19",
+  "name": "COVID-19 en tu municipio",
+  "description": "Accede a los datos oficiales de la Junta de Andalucía sobre el COVID-19 en tu municipio",  
   "theme_color": "#5851ec",
   "background_color": "#5851ec",
   "display": "standalone",
@@ -55,5 +56,27 @@
       "type": "image/png",
       "purpose": "maskable any"
     }
-  ]
+  ],
+  "lang": "es",
+  "categories":[
+    "education",
+    "utilities"
+  ],
+  "screenshots": [
+    {
+      "src": "assets/screenshots/app.png", 
+      "sizes": "862x1754", 
+      "type": "image/png"
+    },
+    {
+      "src": "assets/screenshots/share_APP.png", 
+      "sizes": "862x1754", 
+      "type": "image/png"
+    },
+    {
+      "src": "assets/screenshots/junta_andalucia.png", 
+      "sizes": "862x1754", 
+      "type": "image/png"
+    }
+    ]
 }
