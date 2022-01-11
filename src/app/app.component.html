@@ -106,18 +106,6 @@
 <hr />
 
 <div class="btnInfo">
-  <button
-    class="mat-elevation-z8"
-    mat-raised-button
-    style="background-color: whitesmoke; color: hsl(16, 8%, 8%); padding: 0.5rem"
-    type="button"
-    matTooltip="Enviar recibo por WhatsApp"
-    matTooltipClass="toolTip"
-    (click)="openSweetInputPhoneNumber()"
-  >
-    <mat-icon>share</mat-icon> Comparte gratis la aplicación
-  </button>
-  <hr />
   <p style="margin-top: 1rem; color: white">
     ¿Quieres ver otras localidades?¿Tienes alguna sugerencia?
   </p>
@@ -145,4 +133,9 @@
     scrolling="no"
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
   ></iframe>
+</div>
+<div class="toolbar">
+  <div class="toolbarItem" (click)="openSweetInputPhoneNumber()">
+    <mat-icon style="margin-right: 0.5rem;">share</mat-icon> Comparte gratis la aplicación
+  </div>
 </div>
