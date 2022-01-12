@@ -1,6 +1,6 @@
 {
   "name": "covid19",
-  "version": "1.2.4",
+  "version": "1.3.0",
   "scripts": {
     "ng": "ng",
     "serve": "ng serve",
@@ -25,7 +25,6 @@
     "@angular/service-worker": "~12.1.1",
     "firebase": "^8.2.4",
     "rxjs": "~6.6.0",
-    "sweetalert2": "^10.16.7",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
   },
