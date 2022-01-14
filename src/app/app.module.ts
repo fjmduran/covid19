@@ -15,10 +15,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdSenseComponent } from './ad-sense.component';
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
+import { SafariInstallInstructionsComponent } from './safari-install-instructions/safari-install-instructions.component';
+import { InstallInformationComponent } from './install-information/install-information.component';
 
 @NgModule({
   declarations: [
-    AppComponent, AdSenseComponent, BottomSheetComponent
+    AppComponent, AdSenseComponent, BottomSheetComponent, SafariInstallInstructionsComponent, InstallInformationComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,7 @@ import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAnalyticsModule,
-    HttpClientModule, MaterialModule,FormsModule, ReactiveFormsModule,
+    HttpClientModule, MaterialModule,FormsModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

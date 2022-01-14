@@ -1,7 +1,8 @@
 <div class="container">
   <app-ad-sense></app-ad-sense>
 <!--   <button (click)="test(true)">true</button>
-  <button (click)="test(false)">false</button> -->
+  <button (click)="test(false)">false</button>
+  <button (click)="showInstallPopup()">test</button> -->
   <div class="ubicacion">
     <mat-accordion>
       <mat-expansion-panel
@@ -137,11 +138,11 @@
   ></iframe>
 </div>
 <div class="toolbar">
-  <div class="toolbarItem" (click)="openBottomSheet()" *ngIf="showBtnInstall">
-    <mat-icon style="margin-right: 0.5rem;">system_update</mat-icon> Instalar
+  <div class="toolbarItem" (click)="showInstallPopup()" *ngIf="showBtnInstall">
+    <mat-icon style="margin: 0 0.5em;">system_update</mat-icon> Instalar
   </div>
   <div style="border-left: 3px solid black;" *ngIf="showBtnInstall"></div>
   <div class="toolbarItem" (click)="openSweetInputPhoneNumber()">
-    <mat-icon style="margin-right: 0.5rem;">share</mat-icon> Comparte gratis la aplicación
+    <mat-icon style="margin:0 0.5em;">share</mat-icon> Comparte gratis la aplicación
   </div>
 </div>

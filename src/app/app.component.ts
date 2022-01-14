@@ -4,6 +4,8 @@ import { Observable, Subscription } from 'rxjs';
 import { A2HSPromptService } from '../../../common/src/services/a2-hs-prompt.service';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
+import { MatDialog } from '@angular/material/dialog';
+import { SafariInstallInstructionsComponent } from './safari-install-instructions/safari-install-instructions.component';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +18,6 @@ export class AppComponent {
   private obs$!: Observable<any>;
   public data: any;
   public httpError: boolean = false;
-
-  private installPopup$: Subscription;
 
   public localidadSeleccionada: Localidad = {
     nombre: 'Peñaflor',
@@ -171,17 +171,22 @@ export class AppComponent {
   constructor(
     private api: ServiceService,
     private a2hsPromptService: A2HSPromptService,
-    private _bottomSheet: MatBottomSheet
+    private _bottomSheet: MatBottomSheet,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
     this.a2hsPromptService
       .getCanShowInstallPopup$()
       .subscribe((showInstallPopup) => {
-        this.showBtnInstall = showInstallPopup;
-        if (showInstallPopup) {
-          this.openBottomSheet();
-        }
+        const browser: 'Chromium' | 'Safari' | 'Firefox' =
+          this.a2hsPromptService.getNavigator();          
+        if (browser === 'Safari'){
+          this.showBtnInstall = true;
+        }else{
+          this.showBtnInstall = showInstallPopup;
+        }        
+        if (showInstallPopup) this.showInstallPopup();
       });
 
     const localidadStr: string | null = localStorage.getItem('localidad');
@@ -195,7 +200,17 @@ export class AppComponent {
     this.a2hsPromptService.setValue(b);
   }
 
-  openBottomSheet() {
+  public showInstallPopup() {
+    const browser: 'Chromium' | 'Safari' | 'Firefox' =
+      this.a2hsPromptService.getNavigator();
+    if (browser === 'Safari') {
+      this.showSafariInstallInstructions();
+    } else {
+      this.openBottomSheet();
+    }
+  }
+
+  private openBottomSheet() {
     this._bottomSheet
       .open(BottomSheetComponent)
       .afterDismissed()
@@ -204,6 +219,13 @@ export class AppComponent {
           this.a2hsPromptService.showInstallPopup();
         }
       });
+  }
+
+  private showSafariInstallInstructions(): void {
+    this.dialog.open(SafariInstallInstructionsComponent, {
+      width: '90%',
+      maxWidth: '600px',
+    });
   }
 
   setExpande() {
