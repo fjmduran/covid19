@@ -78,6 +78,7 @@ export class AppComponent {
       nombre: 'Huelva',
       localidades: [
         { nombre: 'Almonte', dataValue: 2718, detailMapaCovid: 'Almonte' },
+        { nombre: 'Bollullos Par del Condado', dataValue: 2726, detailMapaCovid: 'Bollullos%20Par%20del%20Condado' },
         { nombre: 'Cartaya', dataValue: 2734, detailMapaCovid: 'Cartaya' },
         {
           nombre: 'Higuera de la sierra',
@@ -165,6 +166,7 @@ export class AppComponent {
 
   public expande: boolean = false;
   public showBtnInstall: boolean = false;
+  public safari:boolean = false;
 
   public mapaCovid: string = 'https://www.mapacovid.es/detail/Peñaflor';
 
@@ -182,6 +184,7 @@ export class AppComponent {
         const browser: 'Chromium' | 'Safari' | 'Firefox' =
           this.a2hsPromptService.getNavigator();          
         if (browser === 'Safari'){
+          this.safari=true;
           this.showBtnInstall = true;
         }else{
           this.showBtnInstall = showInstallPopup;

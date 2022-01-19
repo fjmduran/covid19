@@ -119,7 +119,8 @@ h1 {
   width: 100%;
   height: 60px;
   background-color: orange;
-  border-top: 3px solid black;
+  border-top: 3px solid rgb(97, 63, 0);
+  border-bottom: 3px solid rgb(97, 63, 0);
 
   display: flex;
   justify-content: center;
