@@ -86,6 +86,11 @@ export class AppComponent {
           detailMapaCovid: 'Higuera%20de%20la%20sierra',
         },
         {
+          nombre: 'Huelva (capital)',
+          dataValue: 2754,
+          detailMapaCovid: 'Huelva',
+        },
+        {
           nombre: 'Isla Cristina',
           dataValue: 2755,
           detailMapaCovid: 'Isla%20Cristina',
